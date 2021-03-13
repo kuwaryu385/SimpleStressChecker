@@ -1,5 +1,5 @@
 
---同じテーブル名があっても複製できるよー
+--同じテーブル名があっても複製できる
 CREATE TABLE IF NOT EXISTS questions(
           id          int(6)        NOT NULL PRIMARY KEY
          ,question    varchar (255) NOT NULL
