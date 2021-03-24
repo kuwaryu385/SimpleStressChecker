@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>SQ.question</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="/css/questions.css">
+  <link rel="stylesheet"  href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/questions.js"></script>
+</head>
+
+<body>
+<p th:text="${totalQuestionNumber}"id="totalQuestionNumber" ></p>
+<p th:text="${nowQuestionNumber}" id="nowQuestionNumber" ></p>
+    <h3>質問<span id="totalQuestionNumView"></span><span id="nowQuestionNumView"></span>
+    </h3>
+
+<div th:text="${nowQuestion.question}"></div>
+
+<div class="answers" style="margin-top: 30pt;">
+
+	<form action="#" th:action="@{/sqtop/questions/ansewr}"  method="post">
+		<input type="hidden" name="id" th:value="${nowQuestion.id}">
+		<button type="submit" class="btn btn-success" name="answer"  value="1" id="nextButton"><span th:text="${nowQuestion.choiceY}"></span></button>
+		<button type="submit" class="btn btn-success" name="answer" value="0" id="nextButton"><span th:text="${nowQuestion.choiceN}"></span></button>
+	</form>
+
+ </div>
+
+</body>
+</html>
