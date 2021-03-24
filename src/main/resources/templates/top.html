@@ -10,9 +10,10 @@
 </head>
 
 <body>
-<h1>超簡易版！心身ストレスチェック（仮）</h1>
+<h1>超簡易版！心身ストレスチェッカー（仮）</h1>
 
-<p>質問の所要時間は1分でサクッとできます,問題数は<span th:text="${questionsAllCount}"></span>問です。</p>
+<p>問題数は<span th:text="${questionsAllCount}"></span>問です。<br>
+所要時間は約1分で、簡単な質問から「はい」か「いいえ」で答えていただきます！</p>
 
 	 <form action="/sqtop/start" name="questionCount"  method="post">
 	    <p>
