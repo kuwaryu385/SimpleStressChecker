@@ -46,7 +46,7 @@ public class QuestionsTopController {
 		//出題リストに登録
 		service.insertQuestions(questionList);
 
-		return "redirect:/sqtop/question";
+		return "redirect:/sqtop/questions";
 	}
 
 }
