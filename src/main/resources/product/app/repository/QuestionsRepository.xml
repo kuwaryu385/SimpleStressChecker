@@ -3,102 +3,87 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="product.app.repository.QuestionsRepository">
 
-<!-- マッピング定義 -->
-    <resultMap type="product.app.domain.Questions" id="questions">
-        <id column="id" property="id" />
-        <result column="question" property="question" />
-        <result column="choice1" property="choiceY" />
-        <result column="choice2" property="choiceN" />
-        <result column="answer" property="answer" />
-        <result column="answered" property="answered" />
-        <result column="misstake" property="answerRate" />
-    </resultMap>
+	<!-- マッピング定義 -->
+	 <resultMap type="product.app.domain.Questions" id="questions">
+		<id column="id" property="id" />
+		<result column="question" property="question" />
+		<result column="choice1" property="choiceY" />
+		<result column="choice2" property="choiceN" />
+		<result column="answer" property="answer" />
+		<result column="answered" property="answered" />
+		<result column="misstake" property="answerRate" />
+	</resultMap>
 
 
-<!--質問集を全件取得 -->
- 	<select id="selectAll" resultMap="questions" >
+	<!--質問集を全件取得 -->
+	<select id="selectAll" resultMap="questions" >
 		SELECT *
 		FROM questions
- 	</select>
+	</select>
 
 
 <!--質問集のIDを選択して1件取得 -->
 	<select id="selectOne" parameterType="int" resultType="product.app.domain.Questions">
    	 	SELECT *
-		FROM my_questions
+		FROM my_questions 
 		WHERE id = #{id}
 	</select>
 
 	<!-- 質問数を取得 -->
 	<select id="countQuestions" resultType="Integer">
-	        SELECT COUNT(*)
-	        FROM questions
-	 </select>
-
-
-
+		SELECT COUNT(*)
+		FROM questions
+ 	</select>
 
 	<!-- 質問テーブルを一括消去 （初期化前処理） -->
-    <delete id="deleteQuestions" parameterType="int">
-         DELETE FROM my_questions
-    </delete>
+	<delete id="deleteQuestions" parameterType="int">
+		DELETE FROM my_questions
+	</delete>
 
+	<!-- 質問テーブルに登録（初期化処理） -->
+	<insert id="insertQuestions" parameterType="list">
+		 INSERT INTO my_questions
+		 SELECT *
+		 FROM questions
+		 WHERE
+		 id in
+ 	 	<foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+  		#{item}
+		</foreach>
+	</insert>
 
-<!-- 質問テーブルに登録（初期化処理） -->
-    <insert id="insertQuestions" parameterType="list">
-         INSERT INTO my_questions
-         SELECT *
-         FROM questions
-         WHERE
-         id in
-          <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
-              #{item}
-          </foreach>
-    </insert>
-
-<!-- 出題リストの質問数を取得 -->
-    <select id="countMyQuestions" resultType="Integer">
-        SELECT COUNT(*)
-        FROM my_questions
-    </select>
-
-
+	<!-- 出題リストの質問数を取得 -->
+	<select id="countMyQuestions" resultType="Integer">
+		SELECT COUNT(*)
+		FROM my_questions
+	</select>
 
 <!-- 未回答の質問IDを取得 -->
-    <select id="idQuestion" resultType="Integer">
-        SELECT id
-        FROM my_questions
-        WHERE answered = false
-    </select>
+	<select id="idQuestion" resultType="Integer">
+		SELECT id
+		FROM my_questions
+		WHERE answered = false
+	</select>
 
+	<!--ストレス項目へ回答の有無を設定 -->
+	<update id="reviewQuestion">
+		UPDATE my_questions
+		SET answerRate = true
+		WHERE id = #{id}
+	</update>
 
-<!-- 回答の有無を設定 -->
-    <update id="reviewQuestion">
-        UPDATE
-            my_questions
-        SET
-            answerRate = false
-        WHERE
-            id = #{id}
-    </update>
+	<!-- 解答済を設定 -->
+	<update id="answerdQuestion">
+		UPDATE my_questions
+		SET answered = true
+		WHERE id = #{id}
+	</update>
 
-    <!-- 解答済を設定 -->
-    <update id="answerdQuestion">
-        UPDATE
-            my_questions
-        SET
-            answered = true
-        WHERE
-            id = #{id}
-    </update>
-
-    <!-- 肯定数を取得 -->
-    <select id="countReview" resultType="Integer">
-        SELECT COUNT(*)
-        FROM
-            my_questions
-        WHERE
-            answerRate = false
-    </select>
+	<!-- ストレス項目に回答した数を取得 -->
+	<select id="countReview" resultType="Integer">
+		SELECT COUNT(*)
+		FROM my_questions
+		WHERE answerRate = true
+	</select>
 
 </mapper>

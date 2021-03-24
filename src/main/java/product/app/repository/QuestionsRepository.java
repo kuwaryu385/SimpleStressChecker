@@ -33,10 +33,10 @@ public interface QuestionsRepository {
 	//正解・不正解結果メソッド
 	public int reviewQuestion(int id);
 
-	//解答済結果メソッド
+	//解答済結果を取得する。
 	public int answerdQuestion(int id);
 
-	//正解数取得メソッド
+	//「はい」と回答した数取得する。
 	public int countReview();
 
 }
