@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import product.app.domain.Questions;
 import product.app.service.QuestionsService;
@@ -23,7 +22,7 @@ public class QuestionsNowController {
 	private QuestionsService service;
 
 	@GetMapping
-	public String question(Model model, RedirectAttributes redirectAttributes) {
+	public String question(Model model) {
 
 		//質問テーブルから回答済み以外のIDを取得
 		List<Integer> questionIdlist = new ArrayList<Integer>();
@@ -45,7 +44,7 @@ public class QuestionsNowController {
 		//出題
 		model.addAttribute("nowQuestion", service.selectOne(questionIdlist.get(0)));
 
-		return "questions";
+		return "/questions";
 
 	}
 

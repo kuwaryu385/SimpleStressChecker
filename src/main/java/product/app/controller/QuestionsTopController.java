@@ -22,10 +22,6 @@ public class QuestionsTopController {
 
 	@GetMapping
 	public String top(Model model) {
-
-		//問題数の取得
-		int questionCount = service.countQuestions();
-		model.addAttribute("questionsAllCount", questionCount);
 		return "top";
 	}
 
