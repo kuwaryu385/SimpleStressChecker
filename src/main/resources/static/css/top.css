@@ -1,0 +1,80 @@
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  margin: 50px auto 50px;
+}
+
+img{
+  width: 40%;
+  text-align: center;
+  margin: 20px auto ;
+}
+
+.card-title{
+
+	text-align: center;
+
+}
+
+
+.card-text{
+	text-align: center;
+}
+
+
+.text {
+	display: inline-block;
+
+}
+
+
+
+.mgt-35{
+    margin-top : 35px;
+}
+
+
+
+@media screen and (max-width:480px) {
+
+	.card{
+	width: 100%;
+
+	}
+
+	h {
+		width: 100%;
+		margin: 0px 0 10px 0;
+	}
+
+* {
+	float: none;
+	position: static;
+}
+
+img {
+
+	max-width: 100%;
+	height: auto;
+	text-align: center;
+}
+
+.card-text{
+	text-align: center;
+}
+
+
+.text {
+	display: inline-block;
+
+}
+
+
+
+
+}
+
+
