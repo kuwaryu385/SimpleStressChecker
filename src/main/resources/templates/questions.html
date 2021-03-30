@@ -1,33 +1,64 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>SQ.question</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="/css/questions.css">
-  <link rel="stylesheet"  href="css/bootstrap.min.css">
-  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="js/questions.js"></script>
+<title>SQ.質問！？</title>
+
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap base -->
+<link th:href="@{../css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+
+<!-- default base -->
+<!-- <link th:href="@{../css/default.css}" rel="stylesheet" type="text/css">
+ -->
+<!-- question base -->
+<link th:href="@{../css/question.css}" rel="stylesheet" type="text/css">
+
+
 </head>
-
 <body>
-<p th:text="${totalQuestionNumber}"id="totalQuestionNumber" ></p>
-<p th:text="${nowQuestionNumber}" id="nowQuestionNumber" ></p>
-    <h3>質問<span id="totalQuestionNumView"></span><span id="nowQuestionNumView"></span>
-    </h3>
 
-<div th:text="${nowQuestion.question}"></div>
+	<div class="container">
+		<div class="row">
+			<div class="card text-center">
+				<div class="card-body">
+				<h5>
+					<span th:text="${totalQuestionNumber}" id="totalQuestionNumber" class="mgr-10"></span>
+					<span th:text="${nowQuestionNumber}" id="nowQuestionNumber"></span>
+				</h5>
 
-<div class="answers" style="margin-top: 30pt;">
+					<h1 class="card-title" >
+						<span th:text="${nowQuestion.question}"></span>
+					</h1>
 
-	<form action="#" th:action="@{/sqtop/questions/ansewr}"  method="post">
-		<input type="hidden" name="id" th:value="${nowQuestion.id}">
-		<button type="submit" class="btn btn-success" name="answer"  value="1" id="nextButton"><span th:text="${nowQuestion.choiceY}"></span></button>
-		<button type="submit" class="btn btn-success" name="answer" value="0" id="nextButton"><span th:text="${nowQuestion.choiceN}"></span></button>
-	</form>
+					<form action="#" th:action="@{/sqtop/questions/ansewr}"
+						method="post" class="mgt-60">
+						<input type="hidden" name="id" th:value="${nowQuestion.id}">
+							<p>
+							<button type="submit" class="btn btn-success btn-lg w-200px"  name="answer"
+								value="1">
+								<span th:text="${nowQuestion.choiceY}"></span>
+							</button>
 
- </div>
+							<button type="submit" class="btn btn-secondary btn-lg w-200px" name="answer"
+								value="0">
+								<span th:text="${nowQuestion.choiceN}"></span>
+							</button>
+							</p>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!-- Support module -->
+	<script type="text/javascript" th:src="@{../js/jquery-3.6.0.js}"></script>
+	<script type="text/javascript" th:src="@{../js/popper.min.js}"></script>
+	<!-- Bootstrap base -->
+	<script type="text/javascript" th:src="@{../js/bootstrap.min.js}"></script>
 
 </body>
 </html>
