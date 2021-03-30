@@ -1,70 +1,126 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>SQ.アドバイス</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet"  href="css/bootstrap.min.css">
-  <script type="text/javascript" src="js/jquery-3.6.0.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-</head>
+<title>SQ.Top</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap base -->
+<link th:href="@{../css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
+<!-- default.css base -->
+<link th:href="@{../css/default.css}" rel="stylesheet" type="text/css">
+
+<!-- advice.css base -->
+<link th:href="@{../css/advice.css}" rel="stylesheet" type="text/css">
+
 
 <body>
-<h1>ストレス対策へのアドバイス</h1>
+	<div class="container">
+		<div class="row">
+		<div class="p-2 p-md-5">
+			<div class="card">
+				<div class="card-body">
 
-<p>ストレス対策のアドバイスの前に<br>
-よくある間違ったストレス解消法として、</p>
+					<h1 class="card-title">ストレス対策へのアドバイス</h1>
 
-<ul>
-<li>酒</li>
-<li>やけ食い</li>
-<li>たばこ</li>
-<li>ギャンブル</li>
-<li>テレビゲーム</li>
-<li>ネットサーフィン</li>
-<li>映画やテレビ</li>
-</ul>
+						<img src="/image/公園でジョギングする男性SF.jpeg" >
 
-<p>これらの方法はストレス対策としては,<br>
-一時しのぎであり、効果は低いと言われてます。</p>
+					<div class="all-text" >
 
-<p>アメリカ心理学会APAより効果があるストレス解消方が紹介されて<br>
-おり参考にしました。</p>
+					<p>
+						ストレス対策のアドバイスの前に、アメリカ心理学会（略名APA）より<br>
+						<span class="bold">よくある間違ったストレス解消法を紹介します。</span>
+					</p>
 
-<p>現在の、ストレスの原因をできる範囲内で、緩和、回避、軽減、排除しつつ</p>
+					<ul class="bud">
+						<li>酒</li>
+						<li>やけ食い</li>
+						<li>たばこ</li>
+						<li>ギャンブル</li>
+						<li>テレビゲーム</li>
+						<li>ネットサーフィン</li>
+						<li>映画やテレビ</li>
+					</ul>
 
-<p>以下の行動をなにか1つでもよいので試してみてください。</p>
+					<p>
+						これらの方法はストレス対策としては<br> 一時しのぎであり、効果は低いと言われてます。
+					</p>
 
-<ul>
-<li>エクササイズ、運動</li>
-<li>瞑想、ヨガ、呼吸法</li>
-<li>読書</li>
-<li>散歩</li>
-<li>良き友人、家族と過ごす。</li>
-<li>マッサージ</li>
-<li>自然に触れる</li>
-<li>誰かを助ける</li>
-<li>誰かに相談する</li>
-<li>栄養の質が高い食事をする。</li>
-</ul>
+					<p>
+						また、<span class="bold">APAから効果が高いストレス解消方</span>が紹介されています。
+					</p>
 
-<p>私のオススメは散歩程度の軽い運動です！<br>
-特に自然に触れるところを軽く10分散歩するだけでも体が軽くなった感じがします。</p>
+					<p>現在のストレス原因をできる範囲内で避けたり、軽くしたりしつつ</p>
 
-<p>もっと詳しくストレスチェックしたい！</p>
-<p>詳しくストレスについて知りたい！という方は</p>
-<p>厚生労働省のページ、心の耳APAアメリカ心理学会</p>
-<p>を参考にしてください</p>
+					<p>以下の行動を何か1つでもよいので試してみてください。</p>
 
-<p>このアプリを作るきっかけと参考にしています。</p>
+					<ul class="good">
+						<li>エクササイズ、運動</li>
+						<li>瞑想、ヨガ、呼吸法</li>
+						<li>読書</li>
+						<li>散歩</li>
+						<li>良き友人、家族と過ごす</li>
+						<li>マッサージ</li>
+						<li>自然に触れる</li>
+						<li>誰かを助ける</li>
+						<li>誰かに相談する</li>
+						<li>栄養の質が高い食事をする</li>
+					</ul>
 
- <div>
-	<form action="/sqtop" method="get">
-		<p style="margin-top: 30pt;">
-			<button class="btn btn-primary" type="submit">最初に戻る</button>
-		</p>
-	</form>
-</div>
+					<p>
+					<span class="bold">私のオススメは散歩程度の軽い運動です！</span>
+					</p>
+
+					<p>公園や河川敷などの自然と触れられるところを軽く10分散歩するだけでも私は効果が感じられました。</p>
+
+
+
+					<p>もっと詳しくストレスチェックしたい！<br>
+					 	詳しくストレスについて知りたい！という方は
+					</p>
+
+					<p><a href="https://kokoro.mhlw.go.jp/" target="_blank">厚生労働省こころの耳</a></p>
+
+					<p><a href="https://www.apa.org/topics/stress" target="_blank">アメリカ心理学会APA・心理学のトピックス・ストレス</a></p>
+
+					<p>を参考にしてみてください。</p>
+
+					<p>このアプリを作るきっかけと参考にしています。</p>
+
+					<p>このアプリは</p>
+					<p>
+					<span class="bold">間違ったストレス解消法を行ってしまい、なかなか疲れが取れない人。</span><br>
+						<span class="bold">仕事や生活で忙しすぎて自分の体調の良し悪しに気がつけない人。</span>
+					</p>
+
+					<p>に向けて<span class="bold">日頃の健康はやっぱ大事だよねー</span>と再認識してもらいたいという想いで作りました。</p>
+					<p>少しでもお役に立てていただけたら幸いです。</p>
+
+					<p>アプリを使っていただきありがとうございました。</p>
+
+					<div>
+						<form action="/sqtop" method="get">
+							<p style="margin-top: 30pt;">
+								<button class="btn btn-info" type="submit">最初に戻る</button>
+							</p>
+						</form>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+
+
+	<!-- Support module -->
+	<script type="text/javascript" th:src="@{../js/jquery-3.6.0.js}"></script>
+	<script type="text/javascript" th:src="@{../js/popper.min.js}"></script>
+	<!-- Bootstrap base -->
+	<script type="text/javascript" th:src="@{../js/bootstrap.min.js}"></script>
+
 
 </body>
 </html>
