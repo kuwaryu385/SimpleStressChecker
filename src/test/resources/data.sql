@@ -1,4 +1,5 @@
 
+
 INSERT INTO `questions` (`id`, `question`, `choiceY`, `choiceN`, `answer`, `answered` ,`answerRate`)
 VALUES
 (1, 'どちらかというと自分は元気だと思うか？', 'そうだ', 'ちがう', 0, FALSE, FALSE),
@@ -11,6 +12,7 @@ VALUES
 (8, '目のつかれはあるか？', 'そうだ', 'ちがう', 1, FALSE, FALSE),
 (9, 'お腹の調子は悪いか？（便秘や下痢などもあるか）', 'そうだ', 'ちがう', 1, FALSE, FALSE),
 (10, 'なかなか寝付けなくなかったり、目覚めが悪いか？', 'そうだ', 'ちがう', 1, FALSE, FALSE);
+
 
 
 
