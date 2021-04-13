@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
-<title>SQ.質問！？</title>
+<title>SQ.出題！</title>
 
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,26 +26,26 @@
 			<div class="card text-center">
 				<div class="card-body">
 				<h5>
-					<span th:text="${totalQuestionNumber}" id="totalQuestionNumber" class="mgr-10"></span>
-					<span th:text="${nowQuestionNumber}" id="nowQuestionNumber"></span>
+					<span  th:text="${totalQuestionNumber}" id="totalQuestionNumber" class="mgr-10"></span>
+					<span  th:text="${nowQuestionNumber}" id="nowQuestionNumber"></span>
 				</h5>
 
 					<h1 class="card-title" >
-						<span th:text="${nowQuestion.question}"></span>
+						<span id="qestionText" th:text="${nowQuestion.question}"></span>
 					</h1>
 
-					<form action="#" th:action="@{/sqtop/questions/ansewr}"
+					<form action="#" th:action="@{/sqtop/questions/answer}"
 						method="post" class="mgt-60">
-						<input type="hidden" name="id" th:value="${nowQuestion.id}">
+						<input type="hidden" id="nowQuestionId" name="id" th:value="${nowQuestion.id}">
 							<p>
-							<button type="submit" class="btn btn-success btn-lg w-200px"  name="answer"
+							<button type="submit" class="btn btn-success btn-lg w-200px" id="yesButton" name="answer"
 								value="1">
-								<span th:text="${nowQuestion.choiceY}"></span>
+								<span id="yesText" th:text="${nowQuestion.choiceY}"></span>
 							</button>
 
-							<button type="submit" class="btn btn-secondary btn-lg w-200px" name="answer"
+							<button type="submit" class="btn btn-secondary btn-lg w-200px" id="noButton" name="answer"
 								value="0">
-								<span th:text="${nowQuestion.choiceN}"></span>
+								<span id="noText" th:text="${nowQuestion.choiceN}"></span>
 							</button>
 							</p>
 					</form>
