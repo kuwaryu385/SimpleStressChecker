@@ -1,6 +1,3 @@
-USE `stressquestion`;
-
-DELETE FROM `questions`;
 
 INSERT INTO `questions` (`id`, `question`, `choiceY`, `choiceN`, `answer`, `answered` ,`answerRate`)
 VALUES
