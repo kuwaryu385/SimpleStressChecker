@@ -45,6 +45,12 @@ public class QuestionsRepositoryTest {
 	}
 
 	@Test
+	public void 存在しないデータを検索すると結果がNULLとなること() throws Exception {
+		Questions actual = sut.selectOne(0);
+		assertThat(actual).isNull();
+	}
+
+	@Test
 	public void 問題数を取得すること() throws Exception {
 		int actual = sut.countQuestions();
 		assertThat(actual, is(10));

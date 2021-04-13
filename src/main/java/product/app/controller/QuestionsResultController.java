@@ -22,11 +22,11 @@ public class QuestionsResultController {
 		int countmyquestion = service.countMyQuestions();
 		model.addAttribute("countmyquestion", countmyquestion);
 
-		//正解数を取得
+		//ストレス項目項目への回答数を取得
 		int countreview = service.countReview();
 		model.addAttribute("countreview", countreview);
 
-		//正解率を算出
+		//ストレス度を算出
 		double answerrate = (double) countreview / countmyquestion * 100;
 		model.addAttribute("answerrate", answerrate);
 

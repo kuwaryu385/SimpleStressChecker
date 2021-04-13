@@ -24,7 +24,7 @@ public class QuestionsNowController {
 	@GetMapping
 	public String question(Model model) {
 
-		//質問テーブルから回答済み以外のIDを取得
+		//質問テーブルから未回答のIDを取得
 		List<Integer> questionIdlist = new ArrayList<Integer>();
 		questionIdlist = service.idQuestion();
 
@@ -48,12 +48,11 @@ public class QuestionsNowController {
 
 	}
 
-	@PostMapping(value = "ansewr")
+	@PostMapping(value = "answer")
 	public String ansewr(@RequestParam(name = "id", required = false) Integer id,
-			@RequestParam(name = "answer", required = false) Integer answer,
-			Model model) {
+			@RequestParam(name = "answer", required = false) Integer answer) {
 
-		//はいと答えたかの判定
+		//ストレス項目への回答したか？（はいと答えたかの判定）
 		Questions question = service.selectOne(id);
 
 		if (answer == question.getAnswer()) {

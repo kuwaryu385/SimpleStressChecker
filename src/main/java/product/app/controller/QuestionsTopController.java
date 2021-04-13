@@ -5,11 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import product.app.service.QuestionsService;
 
@@ -21,12 +19,12 @@ public class QuestionsTopController {
 	private QuestionsService service;
 
 	@GetMapping
-	public String top(Model model) {
+	public String top() {
 		return "top";
 	}
 
 	@PostMapping(value = "start")
-	public String start(RedirectAttributes redirectAttributes) {
+	public String start() {
 
 		//問題数の取得
 		int questionCount = service.countQuestions();
