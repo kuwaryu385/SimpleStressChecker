@@ -63,4 +63,8 @@ dependencies {
 
 test {
 	useJUnitPlatform()
+
+	include 'product/app/controller/*'
+    include 'product/app/repository/*'
+    exclude 'product/app/view/*'
 }
