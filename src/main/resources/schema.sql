@@ -1,5 +1,5 @@
 
-USE `stressquestion`;
+--USE `stressquestion`;
 
 --同じテーブル名があっても複製できる
 CREATE TABLE IF NOT EXISTS questions(
