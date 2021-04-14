@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>SQ.Topページ</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap base -->
+<link th:href="@{../css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+<!-- default base -->
+<link th:href="@{../css/default.css}" rel="stylesheet" type="text/css">
+<!-- top base -->
+<link th:href="@{../css/top.css}" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="card text-center">
+				<div class="card-body">
+					<h1 class="card-title ">
+						<span class="text">超簡易版！</span>
+						<span  class="text">心身ストレス</span>
+						<span class="text">チェッカー</span>
+					</h1>
+
+					<img src="/image/チェックシートグリーン.jpeg" >
+
+			<div class="card-text">
+				<h5>
+					<span class="text">簡単な質問からあなたの</span>
+					<span class="text">心身のストレスレベルを測ります！</span>
+				</h5>
+
+				<h5 >
+					<span class="text">質問数は10問！ </span>
+					<span class="text">約1分で出来ます！ </span>
+				</h5>
+
+				<h5 >
+					<span class="text">	今の自分が当てはまるものを</span>
+					<span class="text">選んでください</span>
+				</h5>
+			</div>
+
+					<form action="/sqtop/start" name="questionCount" method="post" class="mgt-35">
+						<p>
+							<button id="startButton" type="submit" class="btn btn-info btn-lg">チェックスタート</button>
+						</p>
+					</form>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+<!-- Support module -->
+	<script type="text/javascript" th:src="@{../js/jquery-3.6.0.js}"></script>
+	<script type="text/javascript" th:src="@{../js/popper.min.js}"></script>
+<!-- Bootstrap base -->
+	<script type="text/javascript" th:src="@{../js/bootstrap.min.js}"></script>
+
+</body>
+</html>

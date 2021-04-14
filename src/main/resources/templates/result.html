@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title>SQ.結果</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- Bootstrap base -->
+<link th:href="@{../css/bootstrap.min.css}" rel="stylesheet"
+	type="text/css">
+<!-- default.css base -->
+<link th:href="@{../css/default.css}" rel="stylesheet" type="text/css">
+
+<!-- result.css base -->
+<link th:href="@{../css/result.css}" rel="stylesheet" type="text/css">
+
+
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="card text-center">
+				<div class="card-body">
+					<h2 class="card-title">診断結果</h2>
+
+				<div class="card-text">
+					<h1>
+						<span class="bold"  >心身ストレス度：</span>
+						<span id="answerRrate" class="red"  th:text="${answerrate}"></span> %
+					</h1>
+
+					<h3 class="mgt-20">
+						<span class="bold" >出題数：</span>
+						<span id="countMyQuestion" th:text="${countmyquestion}"></span> 問中
+					</h3>
+
+					<h3 class="mgt-20" >
+						<span class="text" >ストレス項目への</span>
+						<span class="text">回答数：</span>
+						 <span id="countReview" class="text" th:text="${countreview}"></span> 問
+					</h3>
+
+					<h4 class="mgt-30">
+					<span id="resultMsg" class="under" th:text="${resultmsg}"></span>
+					</h4>
+
+				</div>
+
+					<div class="mgt-30">
+						<a id="adviceButton" class="btn btn-info" href="advice">ストレス対策へのアドバイス</a>
+					</div>
+
+					<form action="/sqtop" class="mgt-20" method="get">
+						<p >
+							<button class="btn btn-outline-info" id = "topButton" type="submit">最初に戻る</button>
+						</p>
+					</form>
+
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<!-- Support module -->
+	<script type="text/javascript" th:src="@{../js/jquery-3.6.0.js}"></script>
+	<script type="text/javascript" th:src="@{../js/popper.min.js}"></script>
+	<!-- Bootstrap base -->
+	<script type="text/javascript" th:src="@{../js/bootstrap.min.js}"></script>
+
+
+</body>
+</html>
