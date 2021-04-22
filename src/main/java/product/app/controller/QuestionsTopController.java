@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import product.app.service.QuestionsService;
 
 @Controller
-@RequestMapping("/sqtop")
+@RequestMapping("/")
 public class QuestionsTopController {
 
 	@Autowired
@@ -40,7 +40,7 @@ public class QuestionsTopController {
 		//出題リストに登録
 		service.insertQuestions(questionList);
 
-		return "redirect:/sqtop/questions";
+		return "redirect:/questions";
 	}
 
 }

@@ -15,7 +15,7 @@ import product.app.domain.Questions;
 import product.app.service.QuestionsService;
 
 @Controller
-@RequestMapping("/sqtop/questions")
+@RequestMapping("/questions")
 public class QuestionsNowController {
 
 	@Autowired
@@ -30,7 +30,7 @@ public class QuestionsNowController {
 
 		//全問終了
 		if (questionIdlist.size() == 0) {
-			return "redirect:/sqtop/result";
+			return "redirect:/result";
 		}
 
 		//出題数を取得
@@ -61,7 +61,7 @@ public class QuestionsNowController {
 		//回答済みにセット
 		service.answerdQuestion(id);
 
-		return "redirect:/sqtop/questions";
+		return "redirect:/questions";
 
 	}
 

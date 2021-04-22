@@ -34,7 +34,7 @@
 						<span id="qestionText" th:text="${nowQuestion.question}"></span>
 					</h1>
 
-					<form action="#" th:action="@{/sqtop/questions/answer}"
+					<form action="#" th:action="@{/questions/answer}"
 						method="post" class="mgt-60">
 						<input type="hidden" id="nowQuestionId" name="id" th:value="${nowQuestion.id}">
 							<p>
