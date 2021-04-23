@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import product.app.service.QuestionsService;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/sqtop")
 public class QuestionsTopController {
 
 	@Autowired
