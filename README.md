@@ -1,5 +1,5 @@
-# SimpleStressChecker
-# 超簡易版　心身　ストレスチェックアプリ！
+# SimpleStressChecker  
+  超簡易版　心身　ストレスチェックアプリ！
 ストレスチェックアプリケーション
 
 ## Ocerview
