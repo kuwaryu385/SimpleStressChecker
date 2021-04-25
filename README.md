@@ -61,21 +61,20 @@ SpringBoot 2.3.10
 Thymeleaf 3.0.12  
 mybatis-spring-boot-starter-2.1.4   
 
-AWS RDS
 mysql (メイン）  
 H2:database(テスト用)
 
 HTML/CSS/JS  
 bootstarap  
-Thymeleaf 3.0.12.RELEASE   
+Thymeleaf 3.0.12
 
 junit  
 mybatis-spring-boot-starter-test:2.1.3  
 selenide:5.18.0  
 
-AWS RDS
-AWS EC2
-AWS VPC
+AWS RDS  
+AWS EC2  
+AWS VPC  
 
 ## Usage
 
