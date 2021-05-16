@@ -77,6 +77,7 @@ AWS EC2
 AWS VPC  
 
 ## DB設計
+<img width="794" alt="D8A0D648-B097-4E53-95A4-AB26FD590459" src="https://user-images.githubusercontent.com/72501478/118396265-bb0e8d80-b689-11eb-8999-d1642413b11c.png">
 
 
 ## Usage　使い方
@@ -98,9 +99,8 @@ AWS VPC
 となります。
 
 ## Other その他  
-現在も開発を継続しており、順次実装予定です。
-実装予定の機能はIssuesよりご確認いただけます。
-
+現在も開発を継続中です。  
+実装予定の機能はIssuesよりご確認いただけます。  
 
 ## Author
 Ryuta Kuwamura
