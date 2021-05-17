@@ -77,7 +77,8 @@ AWS EC2
 AWS VPC  
 
 ## DB設計
-<img width="794" alt="D8A0D648-B097-4E53-95A4-AB26FD590459" src="https://user-images.githubusercontent.com/72501478/118396265-bb0e8d80-b689-11eb-8999-d1642413b11c.png">
+<img width="794" alt="3DBDE4FD-FC57-4967-80F3-0ADAF51A923E" src="https://user-images.githubusercontent.com/72501478/118435436-ec369e80-b719-11eb-9992-73c425d62186.png">  
+questionsテーブルから、出題用のmy_questionsテーブルへ問題を登録する。
 
 
 ## Usage　使い方
@@ -101,6 +102,7 @@ AWS VPC
 ## Other その他  
 現在も開発を継続中です。  
 実装予定の機能はIssuesよりご確認いただけます。  
+その他学習を兼ねて、仕様変更していく予定です。
 
 ## Author
 Ryuta Kuwamura
