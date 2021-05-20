@@ -105,7 +105,7 @@ questionsテーブルから、出題用のmy_questionsテーブルへ問題を�
 
 ## Other その他  
 現在も開発を継続中です。  
-実装予定の機能とアイデアはIssuesよりご確認いただけます。→ https://github.com/kuwaryu385/SimpleStressChecker/issues   
+実装予定の機能とアイデアはIssuesよりご確認いただけます。→ https://github.com/kuwaryu385/SimpleStressChecker/issues  
 その他学習を兼ねて、仕様変更していく予定です。
 
 ## Author
