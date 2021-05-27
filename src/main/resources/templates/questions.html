@@ -19,6 +19,7 @@
 
 
 </head>
+
 <body>
 
 	<div class="container">
@@ -48,9 +49,24 @@
 								<span id="noText" th:text="${nowQuestion.choiceN}"></span>
 							</button>
 							</p>
+
 					</form>
 				</div>
 			</div>
+
+		<div class="back-btns">
+			<form action="/sqtop" class="left" method="get">
+				<p >
+					<button class="btn btn-light btn-sm" id = "topButton" type="submit">タイトル画面に戻る</button>
+				</p>
+			</form>
+
+			<form action="/questions" class="right" method="get">
+				<p >
+					<button class="btn btn-light btn-sm" id = "beforButton" type="submit">前の問題に戻る</button>
+				</p>
+			</form>
+		</div>
 
 		</div>
 	</div>
