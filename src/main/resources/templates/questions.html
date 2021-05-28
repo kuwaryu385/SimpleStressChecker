@@ -49,7 +49,6 @@
 								<span id="noText" th:text="${nowQuestion.choiceN}"></span>
 							</button>
 							</p>
-
 					</form>
 				</div>
 			</div>
@@ -61,12 +60,17 @@
 				</p>
 			</form>
 
-			<form action="/questions" class="right" method="get">
-				<p >
-					<button class="btn btn-light btn-sm" id = "beforButton" type="submit">前の問題に戻る</button>
-				</p>
-			</form>
-		</div>
+			<div class="right" th:if="!${uesedQuestion}"></div>
+
+				<div th:if="${uesedQuestion}">
+					<form action="/questions/oneBefor" class="right" method="post">
+					<input type="hidden" id="uesedQuestionId" name="id" th:value="${uesedQuestion.id}">
+						<p >
+							<button class="btn btn-light btn-sm" id = "beforButton" type="submit">前の問題に戻る</button>
+						</p>
+					</form>
+				</div>
+			</div>
 
 		</div>
 	</div>
