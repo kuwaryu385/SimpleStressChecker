@@ -44,4 +44,10 @@ public interface QuestionsRepository {
 	//「はい」と回答した数取得する。
 	public int countReview();
 
+	//未出題IDを取得する
+	public List<Integer> idUesedQuestion();
+
+	//未回答に設定し前の質問に戻る
+	public int unanswerdQuestion(int id);
+
 }

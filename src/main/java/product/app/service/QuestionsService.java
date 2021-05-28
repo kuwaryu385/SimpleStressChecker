@@ -47,7 +47,7 @@ public class QuestionsService {
 		return questionsRepository.countMyQuestions();
 	}
 
-	//出題IDを取得する
+	//未出題IDを取得する
 	public List<Integer> idQuestion() {
 		return questionsRepository.idQuestion();
 	}
@@ -67,6 +67,17 @@ public class QuestionsService {
 	//「はい」と回答した数取得する。
 	public int countReview() {
 		return questionsRepository.countReview();
+	}
+
+	//回答後IDを取得する
+	public List<Integer> idUesedQuestion() {
+		return questionsRepository.idUesedQuestion();
+	}
+
+	//未回答に設定して前の問題へ戻る。
+	@Transactional
+	public int unanswerdQuestion(int id) {
+		return questionsRepository.unanswerdQuestion(id);
 	}
 
 }

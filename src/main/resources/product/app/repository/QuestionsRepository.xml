@@ -25,7 +25,7 @@
 <!--質問集のIDを選択して1件取得 -->
 	<select id="selectOne" parameterType="int" resultType="product.app.domain.Questions">
    	 	SELECT *
-		FROM my_questions 
+		FROM my_questions
 		WHERE id = #{id}
 	</select>
 
@@ -85,5 +85,22 @@
 		FROM my_questions
 		WHERE answerRate = true
 	</select>
+
+
+	<!-- 回答済みの質問IDを取得 -->
+	<select id="idUesedQuestion" resultType="Integer">
+		SELECT id
+		FROM my_questions
+		WHERE answered = true
+	</select>
+
+	<!-- 未回答に設定 -->
+	<update id="unanswerdQuestion">
+		UPDATE my_questions
+		SET answered = false
+		WHERE id = #{id}
+	</update>
+
+
 
 </mapper>
